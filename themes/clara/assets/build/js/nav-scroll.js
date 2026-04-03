@@ -1,0 +1,1 @@
+(()=>{const e=document.getElementById("main-nav");e&&window.addEventListener("scroll",()=>{e.classList.toggle("scrolled",window.scrollY>60)},{passive:!0})})();

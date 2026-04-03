@@ -1,0 +1,401 @@
+/* ─── SINGLE POST ARTICLE ─────────────────────────────────────────────────── */
+.post-article {
+  background: var(--ink);
+  padding-block: 0 8em;
+}
+
+/* ─── FULL-WIDTH IMAGE ────────────────────────────────────────────────────── */
+.img-full {
+  grid-column: full-width;
+  margin: 0;
+}
+
+.img-full .img-placeholder--wide,
+.img-full img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--ink-soft) 0%, var(--emer) 100%);
+}
+
+.img-full figcaption {
+  font-family: var(--sans);
+  font-size: 1.2rem;
+  color: rgba(245, 237, 224, 0.35);
+  letter-spacing: 0.06em;
+  padding: 1em var(--padding-inline);
+  text-align: center;
+}
+
+/* ─── PROSE CONTENT ───────────────────────────────────────────────────────── */
+.post-content {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: var(--padding-inline);
+  color: rgba(245, 237, 224, 0.8);
+  font-size: 1.6rem;
+  line-height: 1.85;
+}
+
+.post-content h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2.8rem, 3.5vw, 4rem);
+  color: var(--cream);
+  line-height: 1.15;
+  margin-block: 3.2em 1.2em;
+}
+
+.post-content h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(2.2rem, 2.8vw, 2.8rem);
+  color: var(--gold-light);
+  line-height: 1.2;
+  margin-block: 2.8em 1em;
+}
+
+.post-content h4 {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-block: 2.4em 0.8em;
+}
+
+.post-content h5 {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 1.4rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(196, 162, 101, 0.7);
+  margin-block: 2em 0.6em;
+}
+
+.post-content h6 {
+  font-family: var(--sans);
+  font-size: 1.2rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 237, 224, 0.4);
+  margin-block: 1.6em 0.5em;
+}
+
+.post-content p {
+  margin-block-end: 1.8em;
+}
+
+.post-content p:last-child {
+  margin-block-end: 0;
+}
+
+.post-content a {
+  color: var(--gold-light);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  transition: color 0.25s;
+}
+
+.post-content a:hover {
+  color: var(--gold);
+}
+
+.post-content strong {
+  font-weight: 600;
+  color: var(--cream);
+}
+
+.post-content em {
+  font-style: italic;
+  color: rgba(245, 237, 224, 0.9);
+}
+
+.post-content mark {
+  background: rgba(196, 162, 101, 0.25);
+  color: var(--cream);
+  padding: 0.05em 0.25em;
+}
+
+.post-content kbd {
+  font-family: var(--sans);
+  font-size: 0.85em;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(196, 162, 101, 0.2);
+  border-radius: 4px;
+  padding: 0.15em 0.5em;
+  color: var(--cream);
+}
+
+.post-content code {
+  font-size: 0.9em;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(196, 162, 101, 0.15);
+  padding: 0.15em 0.5em;
+  color: var(--gold-light);
+  border-radius: 3px;
+}
+
+.post-content pre {
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(196, 162, 101, 0.12);
+  border-radius: 4px;
+  padding: 2.4em 2.8em;
+  overflow-x: auto;
+  margin-block: 2.4em;
+}
+
+.post-content pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 1.35rem;
+  line-height: 1.75;
+  color: rgba(245, 237, 224, 0.7);
+}
+
+/* Lists */
+.post-content ul,
+.post-content ol {
+  padding-inline-start: 2.4em;
+  margin-block-end: 2em;
+}
+
+.post-content li {
+  margin-block-end: 0.6em;
+  line-height: 1.75;
+}
+
+/* Definition list */
+.post-content dl {
+  margin-block: 2.4em;
+}
+
+.post-content dt {
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1.3rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-block-start: 2em;
+  margin-block-end: 0.4em;
+}
+
+.post-content dd {
+  margin-inline-start: 0;
+  color: rgba(245, 237, 224, 0.65);
+  line-height: 1.8;
+}
+
+/* Table */
+.post-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: 2.4em;
+  font-size: 1.4rem;
+}
+
+.post-content th {
+  font-family: var(--sans);
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid rgba(196, 162, 101, 0.3);
+  padding: 1.2em 1.6em;
+  text-align: left;
+}
+
+.post-content td {
+  padding: 1.2em 1.6em;
+  border-bottom: 1px solid rgba(196, 162, 101, 0.08);
+  color: rgba(245, 237, 224, 0.65);
+  line-height: 1.6;
+}
+
+.post-content tr:last-child td {
+  border-bottom: none;
+}
+
+.post-content tfoot td {
+  font-size: 1.2rem;
+  color: rgba(245, 237, 224, 0.35);
+  font-style: italic;
+  border-top: 1px solid rgba(196, 162, 101, 0.12);
+  padding-block-start: 1.6em;
+}
+
+/* Details / summary */
+.post-content details {
+  border: 1px solid rgba(196, 162, 101, 0.15);
+  padding: 0;
+  margin-block: 1.6em;
+}
+
+.post-content summary {
+  font-family: var(--sans);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--gold-light);
+  cursor: pointer;
+  padding: 1.6em 2em;
+  list-style: none;
+  transition: color 0.25s;
+}
+
+.post-content summary:hover {
+  color: var(--gold);
+}
+
+.post-content details[open] summary {
+  border-bottom: 1px solid rgba(196, 162, 101, 0.1);
+}
+
+.post-content details > *:not(summary) {
+  padding: 1.6em 2em;
+}
+
+/* Audio */
+.post-content audio {
+  width: 100%;
+  margin-block: 2em;
+}
+
+/* ─── FLOAT IMAGES (inside .post-content) ────────────────────────────────── */
+.img-left,
+.img-right {
+  margin: 0;
+  overflow: hidden;
+}
+
+.img-left {
+  float: left;
+  width: 40%;
+  margin-inline-end: 3.2em;
+  margin-block-end: 2.4em;
+}
+
+.img-right {
+  float: right;
+  width: 40%;
+  margin-inline-start: 3.2em;
+  margin-block-end: 2.4em;
+}
+
+.img-left .img-placeholder,
+.img-right .img-placeholder,
+.img-left img,
+.img-right img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: linear-gradient(135deg, var(--ink-soft) 0%, var(--emer) 100%);
+}
+
+.img-left figcaption,
+.img-right figcaption {
+  font-family: var(--sans);
+  font-size: 1.15rem;
+  color: rgba(245, 237, 224, 0.3);
+  letter-spacing: 0.04em;
+  padding-block-start: 0.8em;
+}
+
+/* ─── PULL QUOTE ──────────────────────────────────────────────────────────── */
+.post-quote {
+  margin: 4.8em 0;
+  padding: 3.6em 4em;
+  border-left: 3px solid var(--gold);
+  background: rgba(196, 162, 101, 0.05);
+  position: relative;
+}
+
+.post-quote p {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2rem, 2.4vw, 2.6rem);
+  line-height: 1.5;
+  color: var(--cream);
+  margin-block-end: 1.2em;
+}
+
+.post-quote p:last-of-type {
+  margin-block-end: 0;
+}
+
+.post-quote cite {
+  font-family: var(--sans);
+  font-size: 1.1rem;
+  font-style: normal;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ─── AUTHOR BOX ──────────────────────────────────────────────────────────── */
+.author-box {
+  display: flex;
+  gap: 3.2em;
+  align-items: flex-start;
+  margin-block-start: 8em;
+  padding-block-start: 5.6em;
+  border-top: 1px solid rgba(196, 162, 101, 0.15);
+}
+
+.author-avatar {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--burg) 0%, var(--emer) 100%);
+  flex-shrink: 0;
+}
+
+.author-role {
+  display: block;
+  margin-block-end: 0.6em;
+}
+
+.author-name {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: 2.4rem;
+  color: var(--cream);
+  margin-block-end: 1.2em;
+}
+
+.author-bio {
+  font-size: 1.4rem;
+  line-height: 1.85;
+  color: rgba(245, 237, 224, 0.55);
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media (max-width: 599px) {
+  .img-left,
+  .img-right {
+    float: none;
+    width: 100%;
+    margin-inline: 0;
+    margin-block-end: 2.4em;
+  }
+
+  .author-box {
+    flex-direction: column;
+    gap: 2em;
+  }
+}
+
+@media (min-width: 900px) {
+  .post-content {
+    padding-inline: 0;
+  }
+}

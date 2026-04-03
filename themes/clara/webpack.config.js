@@ -6,19 +6,21 @@ module.exports = {
 	...defaultConfig,
 
 	entry: {
-		// SCSS → CSS
-		'css/theme': path.resolve( __dirname, 'src/scss/main.scss' ),
-		// JS bundles
-		'js/nav-scroll':  path.resolve( __dirname, 'src/js/nav-scroll.js' ),
-		'js/nav-height':  path.resolve( __dirname, 'src/js/nav-height.js' ),
-		'js/back-to-top': path.resolve( __dirname, 'src/js/back-to-top.js' ),
-		'js/reveal':      path.resolve( __dirname, 'src/js/reveal.js' ),
-		'js/blog':        path.resolve( __dirname, 'src/js/blog.js' ),
+		// SCSS → CSS (from assets/styles/screen/)
+		'css/theme': path.resolve( __dirname, 'assets/styles/screen/main.scss' ),
+
+		// JS bundles (from assets/scripts/src/)
+		'js/nav-scroll':  path.resolve( __dirname, 'assets/scripts/src/nav-scroll.js' ),
+		'js/nav-height':  path.resolve( __dirname, 'assets/scripts/src/nav-height.js' ),
+		'js/back-to-top': path.resolve( __dirname, 'assets/scripts/src/back-to-top.js' ),
+		'js/reveal':      path.resolve( __dirname, 'assets/scripts/src/reveal.js' ),
+		'js/blog':        path.resolve( __dirname, 'assets/scripts/src/blog.js' ),
+		'js/therapy-sidebar': path.resolve( __dirname, 'assets/scripts/src/therapy-sidebar.js' ),
 	},
 
 	output: {
 		...defaultConfig.output,
-		path: path.resolve( __dirname, 'assets' ),
+		path: path.resolve( __dirname, 'assets/build' ),
 		filename: '[name].js',
 	},
 
@@ -28,3 +30,5 @@ module.exports = {
 		new RemoveEmptyScriptsPlugin(),
 	],
 };
+
+

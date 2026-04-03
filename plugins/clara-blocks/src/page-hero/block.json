@@ -1,0 +1,27 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "clara-blocks/page-hero",
+	"version": "1.0.0",
+	"title": "Page Hero",
+	"category": "clara-blocks",
+	"description": "Inner page hero section with eyebrow, heading, subtitle, deck text, and optional badge.",
+	"keywords": [ "hero", "page", "heading", "eyebrow" ],
+	"textdomain": "clara-blocks",
+	"attributes": {
+		"eyebrow":   { "type": "string",  "default": "" },
+		"heading":   { "type": "string",  "default": "" },
+		"subtitle":  { "type": "string",  "default": "" },
+		"deck":      { "type": "string",  "default": "" },
+		"badgePill": { "type": "string",  "default": "" },
+		"badgeLabel":{ "type": "string",  "default": "" },
+		"isSmall":   { "type": "boolean", "default": false },
+		"showBadge": { "type": "boolean", "default": false }
+	},
+	"supports": {
+		"align": [ "full" ],
+		"html": false
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

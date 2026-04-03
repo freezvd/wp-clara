@@ -1,0 +1,98 @@
+/* ─── LAYOUT GRID ────────────────────────────────────────────────────────── */
+main,
+.site-inner,
+header,
+footer {
+  --content-max-width: var(--wp--style--global--content-size);
+  --wide-max-width:    var(--wp--style--global--wide-size);
+  --wide-size: calc((var(--wide-max-width) - var(--content-max-width)) / 2);
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr)
+    [wide-start]       minmax(0, var(--wide-size))
+    [content-start]    min(
+                         100% - (var(--padding-inline) * 2),
+                         var(--content-max-width)
+                       )
+    [content-end]
+                       minmax(0, var(--wide-size)) [wide-end]
+    minmax(var(--padding-inline), 1fr)             [full-width-end];
+}
+
+main > *,
+.site-inner > *,
+header > *,
+footer > * {
+  grid-column: full-width;
+}
+
+.site-inner > * {
+  padding-inline: var(--padding-inline);
+}
+
+/* Opt-in alignment utilities */
+.aligncontent { grid-column: content; }
+.alignwide    { grid-column: wide; }
+.alignfull    { grid-column: full-width; }
+
+/* ─── SECTION SHARED ─────────────────────────────────────────────────────── */
+.section {
+  padding: 8em 2.4em;
+}
+
+.container {
+  max-width: 114rem;
+  margin: 0 auto;
+}
+
+.section-header {
+  margin-block-end: 7.2em;
+}
+
+.section-header .eyebrow {
+  display: block;
+  margin-block-end: 1.6em;
+}
+
+.section-header .eyebrow,
+#about .eyebrow,
+#story .eyebrow {
+  color: var(--burg);
+}
+
+.section-header h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(3.6rem, 5vw, 5.8rem);
+  line-height: 1.1;
+  color: var(--gold);
+}
+
+.section-header p {
+  margin-block-start: 2em;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 54rem;
+}
+
+/* ─── RESPONSIVE LAYOUT OVERRIDES ───────────────────────────────────────── */
+@media (min-width: 900px) {
+  .section                { padding: 12em 4.8em; }
+  #rituals,
+  #contact,
+  #approach               { padding: 12em 4.8em; }
+  #cta-strip              { padding: 8em 4.8em; }
+  .about-grid             { grid-template-columns: 1fr 1fr; gap: 8em; }
+  .services-intro         { grid-template-columns: 1fr 1fr; gap: 8em; margin-block-end: 8em; }
+  .contact-grid           { grid-template-columns: 1fr 1fr; gap: 8em; }
+  .approach-grid          { grid-template-columns: repeat(3, 1fr); gap: 4.8em; margin-block-start: 7.2em; }
+  .rituals-grid           { grid-template-columns: repeat(2, 1fr); margin-block-start: 6.4em; }
+  .cta-inner              { flex-direction: row; text-align: left; gap: 4em; }
+  #intro-strip            { display: flex; gap: 6.4em; padding: 2.8em 4.8em; text-align: left; }
+  .strip-divider          { display: block; }
+  footer                  { flex-direction: row; gap: unset; text-align: left; padding: 5.2em 4.8em; }
+  .footer-links           { flex-wrap: nowrap; justify-content: flex-start; gap: 3.6em; }
+}

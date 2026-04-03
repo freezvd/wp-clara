@@ -1,0 +1,33 @@
+/* ─── BREADCRUMB ──────────────────────────────────────────────────────────── */
+.breadcrumb {
+  display: none;
+}
+
+@media (min-width: 900px) {
+  .breadcrumb {
+    grid-column: wide;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    font-family: var(--sans);
+    font-size: 1rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(245, 237, 224, 0.3);
+    padding-block: 4rem;
+    z-index: 2;
+  }
+}
+
+.breadcrumb a {
+  color: rgba(245, 237, 224, 0.3);
+  transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+  color: var(--gold-light);
+}
+
+.breadcrumb span {
+  color: rgba(196, 162, 101, 0.5);
+}

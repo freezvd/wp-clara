@@ -1,0 +1,1 @@
+(()=>{const e=document.querySelectorAll(".reveal");if(e.length){const t=new IntersectionObserver(e=>{e.forEach((e,r)=>{e.isIntersecting&&(setTimeout(()=>{e.target.classList.add("visible")},r%4*80),t.unobserve(e.target))})},{threshold:.1,rootMargin:"0px 0px -40px 0px"});e.forEach(e=>t.observe(e))}})();

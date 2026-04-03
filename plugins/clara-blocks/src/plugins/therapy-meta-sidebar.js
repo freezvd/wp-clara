@@ -63,4 +63,4 @@ registerPlugin( 'clara-therapy-meta-sidebar', {
 	icon: 'heart',
 } );
 
- 
+

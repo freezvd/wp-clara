@@ -1,0 +1,1 @@
+(()=>{const e=document.getElementById("main-nav");if(e){function n(){document.documentElement.style.setProperty("--nav-height",e.offsetHeight+"px")}n(),window.addEventListener("resize",n,{passive:!0}),window.ResizeObserver&&new ResizeObserver(n).observe(e)}})();

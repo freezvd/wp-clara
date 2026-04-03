@@ -1,0 +1,41 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+
+$breakpoints: (
+	'phone':          400px,
+	'phone-wide':     480px,
+	'phablet':        560px,
+	'tablet-small':   640px,
+	'tablet':         768px,
+	'tablet-wide':   1024px,
+	'desktop':       1240px,
+	'desktop-wide':  1341px,
+);
+
+@mixin breakpoint($breakpoint) {
+	@if map.has-key($breakpoints, $breakpoint) {
+		@media (min-width: #{ map.get($breakpoints, $breakpoint) }) {
+			@content;
+		}
+	} @else if meta.type-of($breakpoint) == number and
+		(math.unit($breakpoint) == px or
+		 math.unit($breakpoint) == em or
+		 math.unit($breakpoint) == rem) {
+		@media (min-width: $breakpoint) {
+			@content;
+		}
+	} @else {
+		@warn "No value could be retrieved from `#{$breakpoint}`. "
+			+ "Make sure it is defined in `$breakpoints` or is a valid px/em/rem value.";
+	}
+}
+
+// USAGE
+//
+// .nav {
+//   padding: 2rem;
+//   @include breakpoint('tablet') {
+//     padding: 4rem;
+//   }
+// }

@@ -1,0 +1,3 @@
+npx @wordpress/create-block@latest --no-plugin --namespace=licht-concept-blocks --category=licht-concept-blocks --variant=static --title="Partners Row" "partners-row"
+
+npx @wordpress/create-block@latest --no-plugin --namespace=licht-concept-blocks --category=licht-concept-blocks --variant=dynamic --title="Product categories" "product-categories"

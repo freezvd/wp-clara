@@ -1,0 +1,33 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "clara-blocks/grain-section",
+	"version": "1.0.0",
+	"title": "Grain Section",
+	"category": "clara-blocks",
+	"description": "Colored section container with animated WebGL film-grain overlay. Accepts inner blocks.",
+	"keywords": [ "grain", "section", "emerald", "burgundy", "canvas" ],
+	"textdomain": "clara-blocks",
+	"attributes": {},
+	"supports": {
+		"align": [ "full", "wide" ],
+		"color": false,
+		"spacing": {
+			"padding": true
+		},
+		"html": false
+	},
+	"styles": [
+		{
+			"name": "emerald",
+			"label": "Emerald"
+		},
+		{
+			"name": "burgundy",
+			"label": "Burgundy"
+		}
+	],
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css",
+	"viewScript": "file:./view.js"
+}

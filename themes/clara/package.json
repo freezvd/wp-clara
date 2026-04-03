@@ -1,0 +1,17 @@
+{
+  "name": "clara",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "wp-scripts build && node scripts/build-sprite.mjs",
+    "start": "wp-scripts start",
+    "build:sprite": "node scripts/build-sprite.mjs",
+    "lint:css": "wp-scripts lint-style"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^30.0.0",
+    "sass": "^1.70.0",
+    "sass-loader": "^14.0.0",
+    "webpack-remove-empty-scripts": "^1.0.0",
+    "svg-sprite": "^2.0.0"
+  }
+}

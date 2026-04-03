@@ -1,0 +1,54 @@
+// ─── Grain Section block styles (frontend + editor) ────────────────────────
+
+.wp-block-clara-blocks-grain-section {
+  position: relative;
+  overflow: hidden;
+
+  // Canvas grain overlay — moved from theme _utilities.scss
+  .grain-canvas {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    pointer-events: none;
+    mix-blend-mode: overlay;
+    opacity: 0.25;
+    z-index: 0;
+  }
+
+  // Ensure all direct inner block wrappers sit above the canvas
+  > *:not(.grain-canvas) {
+    position: relative;
+    z-index: 1;
+  }
+
+  // ── Style: Emerald ──────────────────────────────────────────────────────
+  &.is-style-emerald {
+    background: var(--emer);
+  }
+
+  // ── Style: Burgundy ─────────────────────────────────────────────────────
+  &.is-style-burgundy {
+    background: var(--burg);
+  }
+}
+
+// Editor-only placeholder so the canvas area is visible while editing
+.wp-block-clara-blocks-grain-section .grain-canvas-placeholder {
+  display: none;
+}
+
+.block-editor-block-list__block .wp-block-clara-blocks-grain-section .grain-canvas-placeholder {
+  display: block;
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.03) 0px,
+    rgba(255, 255, 255, 0.03) 2px,
+    transparent 2px,
+    transparent 8px
+  );
+  pointer-events: none;
+  z-index: 0;
+}

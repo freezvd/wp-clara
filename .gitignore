@@ -1,0 +1,37 @@
+# ─── Other themes — ignore all except clara ──────────────────────────────────
+themes/*
+!themes/clara/
+
+# ─── Other plugins — ignore all except clara-blocks ──────────────────────────
+plugins/*
+!plugins/clara-blocks/
+
+# ─── WordPress-generated files ────────────────────────────────────────────────
+uploads/
+upgrade/
+languages/
+debug.log
+advanced-cache.php
+object-cache.php
+index.php
+
+# ─── Dependencies ────────────────────────────────────────────────────────────
+node_modules/
+vendor/
+
+# ─── Build artifacts — theme ─────────────────────────────────────────────────
+themes/clara/assets/css/
+themes/clara/assets/js/
+themes/clara/assets/images/sprite.svg
+
+# ─── Build artifacts — plugin ────────────────────────────────────────────────
+plugins/clara-blocks/build/
+
+# ─── Editor & OS noise ───────────────────────────────────────────────────────
+.idea/
+.DS_Store
+*.ico
+*.log
+*.sql
+*.zip
+package-lock.json

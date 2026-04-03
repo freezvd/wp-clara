@@ -1,0 +1,10 @@
+@use "../utils/functions" as *;
+
+:root {
+	$padding-inline: to_em(36);
+	--padding-inline: #{$padding-inline};
+	--scrollbar: calc(100vw - 100cqw);
+	--content-max-width: var(--wp--style--global--content-size);
+	--wide-max-width: var(--wp--style--global--wide-size);
+	--wide-size: calc((var(--wide-max-width) - var(--content-max-width)) / 2);
+}

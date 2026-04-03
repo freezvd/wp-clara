@@ -1,0 +1,90 @@
+@use "sass:map";
+@use "../abstracts/utilities/breakpoints" as *;
+@use "../abstracts/utilities/functions" as *;
+@use "sprites" as *;
+
+.icon {
+	display: inline-block;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	position: relative;
+	width: var(--width);
+	height: var(--height);
+	pointer-events: none;
+
+	&::before {
+		content: "";
+		background-size: var(--width) var(--height);
+		background-repeat: no-repeat;
+		position: absolute;
+		inset: 0;
+		margin: auto;
+		width: var(--width);
+		height: var(--height);
+	}
+
+	&-envelope,
+	&-phone,
+	&-phone-white,
+	&-checkmark {
+		--width: 16px;
+		--height: 16px;
+	}
+
+	&-facebook,
+	&-instagram,
+	&-linkedin,
+	&-pin-white,
+	&-envelope-dark {
+		--width: 20px;
+		--height: 20px;
+	}
+
+	&-envelope {
+		&::before {
+			background-image: url("#{map.get($sprites, "email-white")}");
+		}
+	}
+	&-envelope-dark {
+		&::before {
+			background-image: url("#{map.get($sprites, "envelop")}");
+		}
+	}
+
+	&-phone {
+		&::before {
+			background-image: url("#{map.get($sprites, "phone")}");
+		}
+	}
+	&-phone-white {
+		&::before {
+			background-image: url("#{map.get($sprites, "phone-white")}");
+		}
+	}
+	&-pin-white {
+		&::before {
+			background-image: url("#{map.get($sprites, "pin-white")}");
+		}
+	}
+	&-checkmark {
+		&::before {
+			background-image: url("#{map.get($sprites, "checkmark")}");
+		}
+	}
+
+	&-facebook {
+		&::before {
+			background-image: url("#{map.get($sprites, "facebook")}");
+		}
+	}
+	&-instagram {
+		&::before {
+			background-image: url("#{map.get($sprites, "instagram")}");
+		}
+	}
+	&-linkedin {
+		&::before {
+			background-image: url("#{map.get($sprites, "linkedin")}");
+		}
+	}
+}

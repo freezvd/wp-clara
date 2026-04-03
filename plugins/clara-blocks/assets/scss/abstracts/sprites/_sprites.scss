@@ -1,0 +1,170 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+
+$sprites: (
+	"arrow-dark": "../../../assets/images/sprite.svg#sprite-arrow-dark-fragment",
+	"arrow-white":
+		"../../../assets/images/sprite.svg#sprite-arrow-white-fragment",
+	"caret": "../../../assets/images/sprite.svg#sprite-caret-fragment",
+	"checkmark": "../../../assets/images/sprite.svg#sprite-checkmark-fragment",
+	"comment-white":
+		"../../../assets/images/sprite.svg#sprite-comment-white-fragment",
+	"email-white":
+		"../../../assets/images/sprite.svg#sprite-email-white-fragment",
+	"euro": "../../../assets/images/sprite.svg#sprite-euro-fragment",
+	"envelop": "../../../assets/images/sprite.svg#sprite-envelop-fragment",
+	"facebook": "../../../assets/images/sprite.svg#sprite-facebook-fragment",
+	"form-check": "../../../assets/images/sprite.svg#sprite-form-check-fragment",
+	"instagram": "../../../assets/images/sprite.svg#sprite-instagram-fragment",
+	"linkedin": "../../../assets/images/sprite.svg#sprite-linkedin-fragment",
+	"phone-white":
+		"../../../assets/images/sprite.svg#sprite-phone-white-fragment",
+	"phone": "../../../assets/images/sprite.svg#sprite-phone-fragment",
+	"pin-white": "../../../assets/images/sprite.svg#sprite-pin-white-fragment",
+	"pool-bg": "../../../assets/images/sprite.svg#sprite-pool-bg-fragment",
+);
+
+$sizes: (
+	"arrow-dark": (
+		"width": 16px,
+		"height": 16px,
+	),
+	"arrow-white": (
+		"width": 16px,
+		"height": 16px,
+	),
+	"caret": (
+		"width": 16px,
+		"height": 16px,
+	),
+	"checkmark": (
+		"width": 16px,
+		"height": 16px,
+	),
+	"comment-white": (
+		"width": 16px,
+		"height": 16px,
+	),
+	"email-white": (
+		"width": 16px,
+		"height": 16px,
+	),
+	"envelop": (
+		"width": 20px,
+		"height": 20px,
+	),
+	"euro": (
+		"width": 15px,
+		"height": 15px,
+	),
+	"facebook": (
+		"width": 20px,
+		"height": 20px,
+	),
+	"form-check": (
+		"width": 48px,
+		"height": 48px,
+	),
+	"instagram": (
+		"width": 20px,
+		"height": 20px,
+	),
+	"linkedin": (
+		"width": 20px,
+		"height": 20px,
+	),
+	"phone-white": (
+		"width": 16px,
+		"height": 16px,
+	),
+	"phone": (
+		"width": 16px,
+		"height": 16px,
+	),
+	"pin-white": (
+		"width": 20px,
+		"height": 20px,
+	),
+	"pool-bg": (
+		"width": 1440px,
+		"height": 677px,
+	),
+);
+
+$variables: (/* EMPTY */);
+
+// https://github.com/waldemarfm/sass-svg-uri/blob/v1.0.0/_svg-uri.scss
+@function sprite-str-replace($string, $search, $replace: "") {
+	$index: string.index($string, $search);
+
+	@if meta.type-of($replace) == "null" {
+		$replace: "";
+	}
+
+	@if ($index) {
+		@return string.slice($string, 1, $index - 1) + $replace +
+			sprite-str-replace(
+				str-slice($string, $index + str-length($search)),
+				$search,
+				$replace
+			);
+	}
+
+	@return $string;
+}
+
+@function sprite-svg-uri($value) {
+	$encoded: "";
+	$slice: 2000;
+	$index: 0;
+
+	@for $i from 1 through ceil(string.length($value) / $slice) {
+		$chunk: string.slice($value, $index, $index + $slice - 1);
+		$chunk: sprite-str-replace($chunk, '"', "'");
+		$chunk: sprite-str-replace($chunk, "<", "%3C");
+		$chunk: sprite-str-replace($chunk, ">", "%3E");
+		$chunk: sprite-str-replace($chunk, "&", "%26");
+		$chunk: sprite-str-replace($chunk, "#", "%23");
+		$encoded: #{$encoded}#{$chunk};
+		$index: $index + $slice;
+	}
+
+	@return $encoded;
+}
+
+@mixin sprite($name, $user-variables: (), $include-size: false) {
+	$sprite: map.get($sprites, $name);
+
+	// Inject variables
+	$default-variables: map.get($variables, $name);
+
+	@if meta.type-of($default-variables) == "map" {
+		@each $key, $value in map.merge($default-variables, $user-variables) {
+			@if (not map.has-key($default-variables, $key)) {
+				@warn "Sprite \'#{$name}\' does not support variable named \'#{$key}\'";
+			}
+
+			$sprite: sprite-str-replace(
+				$sprite,
+				"___#{$key}___",
+				sprite-svg-uri(quote(#{$value}))
+			);
+		}
+	} @else if meta.type-of($user-variables) == "map" {
+		@warn "Sprite \'#{$name}\' does not contain any variables";
+	}
+
+	background: url($sprite) center no-repeat;
+
+	@if $include-size {
+		$size: map.get($sizes, $name);
+
+		@if $include-size == true {
+			background-size: map.get($size, width) map.get($size, height);
+		} @else if $include-size == "box" {
+			width: map.get($size, width);
+			height: map.get($size, height);
+		}
+	}
+}

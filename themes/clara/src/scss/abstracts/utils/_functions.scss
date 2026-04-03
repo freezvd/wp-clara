@@ -1,0 +1,19 @@
+@use "sass:math";
+
+// ─── px → em ─────────────────────────────────────────────────────────────────
+// Default base of 10 matches the 62.5% html font-size used in this theme
+// (1rem = 10px), so to_em(18) → 1.8em relative to the element's own context.
+// Override $base when the element's own font-size differs.
+@function to_em($pixels, $base: 10) {
+	@return #{math.div($pixels, $base)}em;
+}
+
+// ─── px → rem ────────────────────────────────────────────────────────────────
+// With html { font-size: 62.5% }, 1rem = 10px.
+// to_rem(18) → 1.8rem
+@function to_rem($pixels) {
+	@return #{math.div($pixels, 10)}rem;
+}
+
+// USAGE
+// .el { font-size: to_rem(18); padding: to_em(24); }

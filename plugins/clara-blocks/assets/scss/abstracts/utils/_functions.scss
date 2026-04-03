@@ -1,0 +1,11 @@
+//Pixels to EM
+@use "sass:math";
+
+@function to_em($pixels, $size: 18) {
+	@return #{math.div($pixels, $size)}em;
+}
+
+//Pixels to REM
+@function to_rem($pixels) {
+	@return #{$pixels * 0.1}rem;
+}

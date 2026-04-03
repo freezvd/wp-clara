@@ -1,0 +1,312 @@
+// Input Placeholders
+@mixin input-placeholder {
+	&.placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+	&::-webkit-input-placeholder {
+		@content;
+	}
+}
+
+// USAGE
+
+//
+//input,
+//textarea {
+//  @include input-placeholder {
+//    color: $grey;
+// }
+//}
+
+// Clearfix.
+@mixin clearfix {
+	clear: both;
+
+	&::before,
+	&::after {
+		display: block;
+		clear: both;
+		content: '';
+	}
+}
+
+// Flexfix.
+@mixin flexfix {
+	&::before,
+	&::after {
+		position: absolute;
+	}
+}
+
+// Overlay.
+@mixin overlay {
+	position: relative;
+
+	&::before {
+		display: block;
+		position: absolute;
+		z-index: 1;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: $overlay;
+		content: '';
+		pointer-events: none;
+	}
+}
+
+// Center.
+@mixin center {
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+}
+
+// Screen reader text.
+@mixin screen-reader-text() {
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	position: absolute !important;
+	width: 1px;
+	height: 1px;
+	border: 0;
+	word-wrap: normal !important;
+}
+
+// USAGE
+
+//.screen-reader-text {
+//  @include screen-reader-text;
+//}
+
+
+// Keyframe Animation
+@mixin keyframes($name) {
+	@-webkit-keyframes #{$name} {
+		@content;
+	}
+	@-moz-keyframes #{$name} {
+		@content;
+	}
+	@-ms-keyframes #{$name} {
+		@content;
+	}
+	@-o-keyframes #{$name} {
+		@content;
+	}
+	@keyframes #{$name} {
+		@content;
+	}
+}
+
+@mixin animation($value) {
+	-webkit-animation: $value;
+	-moz-animation: $value;
+	-ms-animation: $value;
+	-o-animation: $value;
+	animation: $value;
+}
+
+// USAGE
+
+
+//@include keyframes(move) {
+//  0%   { left: 0; }
+//  100% { left: 100px; }
+//}
+
+//.box {
+//  @include animation(move 0.5s ease infinite alternate);
+//}
+
+
+// Font Styles
+@mixin font(
+	$font-family: false,
+	$size: false,
+	$colour: false,
+	$weight: false,
+	$lh: false
+) {
+	@if $font-family {
+		font-family: $font-family;
+	}
+	@if $size {
+		font-size: $size;
+	}
+	@if $colour {
+		color: $colour;
+	}
+	@if $weight {
+		font-weight: $weight;
+	}
+	@if $lh {
+		line-height: $lh;
+	}
+}
+
+// USAGE
+
+
+//div {
+//  @include font( $base-font, 16px, #fff, 700, 18px );
+//}
+
+
+// Box Shadow Emboss
+@mixin box-emboss($outerOpacity, $innerOpacity) {
+	box-shadow: rgba($white, $outerOpacity) 0 1px 0,
+	rgba($black, $innerOpacity) 0 1px 0 inset;
+}
+
+// USAGE
+
+//.module, header[role="banner"] {
+//  @include box-emboss(0.3, 0.6);
+//}
+
+
+// Opacity
+@mixin opacity($opacity) {
+	opacity: $opacity;
+	$opacity-ie: $opacity * 100;
+	filter: alpha(opacity=$opacity-ie); //IE8
+}
+
+// USAGE
+
+
+//.fade {
+//  @include opacity(.4);
+//}
+
+
+// Pseudo selectors
+%pseudos {
+	content: '';
+	position: absolute;
+}
+
+// USAGE
+
+
+//*:before {
+//@extend %pseudos;
+//}
+
+
+// Transform
+// generic transform
+@mixin transform($transforms) {
+	transform: $transforms;
+}
+
+// rotate
+@mixin rotate($deg) {
+	@include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+	@include transform(scale($scale));
+}
+
+// translate
+@mixin translate($x, $y) {
+	@include transform(translate($x, $y));
+}
+
+// skew
+@mixin skew($x, $y) {
+	@include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+@mixin transform-origin($origin) {
+	transform-origin: $origin;
+}
+
+// USAGE
+
+//.test {
+//  @include skew(25,10);
+//  @include transform-origin(top left);
+//}
+
+
+// Transition
+@mixin transition($transition...) {
+	transition: $transition;
+}
+
+@mixin transition-property($property...) {
+	transition-property: $property;
+}
+
+@mixin transition-duration($duration...) {
+	transition-property: $duration;
+}
+
+@mixin transition-timing-function($timing...) {
+	transition-timing-function: $timing;
+}
+
+@mixin transition-delay($delay...) {
+	transition-delay: $delay;
+}
+
+// USAGE
+
+
+//a {
+// @include transition(background-color 1s .5s, color 2s);
+//}
+
+
+// Linear Gradient
+@mixin linear-gradient($args...) {
+	background-image: -o-linear-gradient($args);
+	background-image: -moz-linear-gradient($args);
+	background-image: -webkit-linear-gradient($args);
+	background-image: linear-gradient($args);
+}
+
+// USAGE
+
+
+//div {
+// @include linear-gradient(45deg, black, white);
+//}
+
+
+@mixin hover {
+	@media (hover: hover) {
+		&:hover,
+		&:focus {
+			@content;
+		}
+	}
+}
+
+// USAGE
+
+
+//a {
+//  @include hover {
+//    border: 1px solid red;
+//    color: blue;
+//  }
+//}
+

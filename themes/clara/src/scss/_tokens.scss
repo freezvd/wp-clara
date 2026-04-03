@@ -1,0 +1,32 @@
+/* ─── DESIGN TOKENS ─────────────────────────────────────────────────────── */
+:root {
+  /* Palette — mirrors theme.json presets */
+  --burg:        #6B2337;
+  --burg-mid:    #8B3048;
+  --burg-light:  #A8445F;
+  --emer:        #2A6E60;
+  --emer-mid:    #3A8B7A;
+  --emer-light:  #4DA596;
+  --gold:        #C4A265;
+  --gold-light:  #D9BE96;
+  --cream:       #F5EDE0;
+  --cream-deep:  #EDE0CC;
+  --parchment:   #F9F4EC;
+  --ink:         #1A1209;
+  --ink-soft:    #2E2016;
+  --text-body:   #3D2E1E;
+  --text-muted:  #5E4A3A;
+
+  /* Typography */
+  --serif:  'Cormorant Garamond', Georgia, serif;
+  --sans:   'Raleway', 'Helvetica Neue', sans-serif;
+
+  /* Layout */
+  --nav-height:         7.2rem;
+  --padding-inline:     1.5rem;
+  --breadcrumb-offset:  calc(var(--nav-height) + 2rem);
+
+  /* WP layout vars — keep in sync with theme.json layout.contentSize / wideSize */
+  --wp--style--global--content-size: 114rem;
+  --wp--style--global--wide-size:    140rem;
+}

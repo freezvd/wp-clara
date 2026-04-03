@@ -1,0 +1,47 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:math";
+
+$breakpoints: (
+	'phone': 400px,
+	'phone-wide': 480px,
+	'phablet': 560px,
+	'tablet-small': 640px,
+	'tablet': 768px,
+	'tablet-wide': 1024px,
+	'desktop': 1240px,
+	'desktop-wide': 1341px,
+);
+
+@mixin breakpoint($breakpoint) {
+	@if map.has-key($breakpoints, $breakpoint) {
+		@media (min-width: #{ map.get($breakpoints, $breakpoint) }) {
+			@content;
+		}
+	} @else if meta.type_of($breakpoint) ==
+		number and
+		math.unit($breakpoint) ==
+		px or
+		math.unit($breakpoint) ==
+		em or
+		math.unit($breakpoint) ==
+		rem {
+		@media (min-width: $breakpoint) {
+			@content;
+		}
+	} @else {
+		@warn "No value could be retrieved from `#{$breakpoint}`. "
+			+ "Please make sure it is defined in `$breakpoints` map, or it is a valid number with supported unit of px, em or rem.";
+	}
+}
+
+// USAGE
+
+//.site-header {
+//  padding: 2rem;
+//  font-size: 1.8rem;
+//  @include breakpoint('tablet-wide') {
+//    padding-top: 4rem;
+//    font-size: 2.4rem;
+// }
+//}

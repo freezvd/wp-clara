@@ -1,0 +1,398 @@
+/* ─── CONTACT SECTION (home) ──────────────────────────────────────────────── */
+#contact {
+  background: linear-gradient(160deg, #130E0B 0%, #0E1C1A 100%);
+  padding: 8em 2.4em;
+  position: relative;
+  overflow: hidden;
+}
+
+#contact::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 55% 45% at 15% 20%, rgba(107, 35, 55, 0.25) 0%, transparent 55%),
+    radial-gradient(ellipse 45% 55% at 85% 80%, rgba(28, 78, 63, 0.2) 0%, transparent 55%);
+  pointer-events: none;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4.8em;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-info .eyebrow {
+  display: block;
+  margin-block-end: 1.6em;
+}
+
+.contact-info h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(3.2rem, 4vw, 5.2rem);
+  color: var(--cream);
+  line-height: 1.1;
+}
+
+@media (min-width: 900px) {
+  .contact-info h2 {
+    margin-block-end: 70px;
+  }
+}
+
+.contact-info > p {
+  font-size: 1.5rem;
+  line-height: 1.85;
+  color: rgba(245, 237, 224, 0.55);
+}
+
+@media (min-width: 900px) {
+  .contact-info > p {
+    margin-block-end: 4.8em;
+  }
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding-block-start: 30px;
+}
+
+@media (min-width: 900px) {
+  .contact-details {
+    padding-block-start: 80px;
+  }
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.6em;
+}
+
+.contact-item-icon {
+  width: 4rem;
+  height: 4rem;
+  background: rgba(196, 162, 101, 0.1);
+  border: 1px solid rgba(196, 162, 101, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--gold);
+}
+
+.contact-item-icon svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.contact-item-text span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(196, 162, 101, 0.5);
+  margin-block-end: 0.3em;
+}
+
+.contact-item-text p {
+  font-size: 1.4rem;
+  color: rgba(245, 237, 224, 0.75);
+}
+
+/* Contact page item body variant */
+.contact-item-body span {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(196, 162, 101, 0.5);
+  margin-block-end: 0.4em;
+}
+
+.contact-item-body p {
+  font-size: 1.5rem;
+  color: rgba(245, 237, 224, 0.75);
+  line-height: 1.6;
+}
+
+.contact-item-body a {
+  font-size: 1.5rem;
+  color: rgba(245, 237, 224, 0.75);
+  transition: color 0.3s;
+}
+
+.contact-item-body a:hover {
+  color: var(--gold-light);
+}
+
+.contact-form-wrap {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(196, 162, 101, 0.12);
+  padding: 4.8em;
+}
+
+.contact-form-wrap h3 {
+  font-family: var(--serif);
+  font-size: 2.4rem;
+  font-weight: 400;
+  color: var(--cream);
+  margin-block-end: 3.2em;
+}
+
+.contact-form-wrap > p {
+  font-size: 1.4rem;
+  color: rgba(245, 237, 224, 0.4);
+  margin-block-end: 3.6em;
+}
+
+/* ─── CONTACT PAGE ────────────────────────────────────────────────────────── */
+#contact-main {
+  background-color: var(--ink);
+}
+
+@media (min-width: 900px) {
+  #contact-main {
+    background-image: linear-gradient(160deg, #130E0B 0%, #0E1C1A 100%);
+    background-color: transparent;
+  }
+}
+
+.contact-main-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4.8em;
+  align-items: start;
+  position: relative;
+  z-index: 1;
+}
+
+/* ─── HOURS & MAP ─────────────────────────────────────────────────────────── */
+#hours-map {
+  background: var(--parchment);
+  padding: 8em 2.4em;
+}
+
+.hours-map-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4.8em;
+  align-items: start;
+}
+
+.hours-wrap .eyebrow {
+  display: block;
+  margin-block-end: 1.6em;
+}
+
+.hours-wrap h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(3rem, 3.5vw, 4.4rem);
+  color: var(--ink-soft);
+  line-height: 1.1;
+  margin-block-end: 4em;
+}
+
+.hours-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6em 0;
+  border-bottom: 1px solid rgba(196, 162, 101, 0.15);
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.hours-day {
+  font-family: var(--sans);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-body);
+}
+
+.hours-time {
+  font-family: var(--serif);
+  font-size: 1.6rem;
+  color: var(--burg-mid);
+  font-style: italic;
+}
+
+.hours-time.closed {
+  color: var(--text-muted);
+  font-style: normal;
+  font-family: var(--sans);
+  font-size: 1.3rem;
+}
+
+.map-wrap .eyebrow {
+  display: block;
+  margin-block-end: 1.6em;
+}
+
+.map-wrap h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(3rem, 3.5vw, 4.4rem);
+  color: var(--ink-soft);
+  line-height: 1.1;
+  margin-block-end: 3.2em;
+}
+
+.map-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: linear-gradient(135deg, var(--emer) 0%, var(--burg) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.map-placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 13, 8, 0.3);
+}
+
+.map-placeholder p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.8rem;
+  color: rgba(245, 237, 224, 0.5);
+  position: relative;
+  z-index: 1;
+}
+
+.map-address {
+  margin-block-start: 2.4em;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.map-address strong {
+  color: var(--text-body);
+  font-weight: 400;
+}
+
+/* ─── WHATSAPP CTA (contact page) ─────────────────────────────────────────── */
+#whatsapp-cta {
+  background: var(--emer);
+  padding: 8em 2.4em;
+  position: relative;
+  overflow: hidden;
+}
+
+#whatsapp-cta::before {
+  content: '';
+  position: absolute;
+  top: -8rem;
+  right: -8rem;
+  width: 32rem;
+  height: 32rem;
+  border-radius: 50%;
+  background: rgba(107, 35, 55, 0.15);
+}
+
+.wa-inner {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 3.2em;
+  position: relative;
+  z-index: 1;
+}
+
+.wa-text .eyebrow {
+  color: rgba(245, 237, 224, 0.55);
+  margin-block-end: 1.2em;
+}
+
+.wa-text h2 {
+  font-family: var(--serif);
+  font-weight: 300;
+  font-style: italic;
+  font-size: clamp(2.8rem, 3.5vw, 4.4rem);
+  color: var(--cream);
+  line-height: 1.15;
+}
+
+.wa-text p {
+  margin-block-start: 1.6em;
+  font-size: 1.5rem;
+  color: rgba(245, 237, 224, 0.6);
+}
+
+/* ─── RESPONSIVE ──────────────────────────────────────────────────────────── */
+@media (min-width: 900px) {
+  .contact-main-grid {
+    grid-template-columns: 1fr 1.4fr;
+    gap: 8em;
+  }
+
+  .hours-map-grid {
+    grid-template-columns: 1fr 1.6fr;
+    gap: 8em;
+  }
+
+  #contact-main,
+  #hours-map {
+    padding: 12em 4.8em;
+  }
+
+  #whatsapp-cta {
+    padding: 8em 4.8em;
+  }
+
+  .wa-inner {
+    flex-direction: row;
+    text-align: left;
+    gap: 4em;
+  }
+
+  .contact-item-icon {
+    width: 4.8rem;
+    height: 4.8rem;
+  }
+
+  .contact-item-icon svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .contact-form-wrap {
+    padding: 5.2em 20px;
+  }
+
+  .contact-form-wrap h3 {
+    font-size: 2.8rem;
+    margin-block-end: 0.6em;
+  }
+}

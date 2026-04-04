@@ -1,5 +1,26 @@
+// ─── CLARA COLOR PALETTE ─────────────────────────────────────────────────────
+// Sass vars that wrap the CSS custom properties defined in _tokens.scss.
+// Use these vars in Sass contexts (maps, mixin args, string interpolation).
+// Use the CSS vars directly (var(--burg)) inside property values.
 $white: var(--wp--preset--color--white);
 $black: var(--wp--preset--color--black);
 
-//$color_gunmetal: var(--wp--preset--color--gunmetal);//#1F2937
+$burg:        var(--wp--preset--color--burg);        // #6B2337 — deep burgundy
+$burg-mid:    var(--wp--preset--color--burg-mid);    // #8B3048
+$burg-light:  var(--wp--preset--color--burg-light);  // #A8445F
 
+$emer:        var(--wp--preset--color--emer);        // #2A6E60 — deep teal
+$emer-mid:    var(--wp--preset--color--emer-mid);    // #3A8B7A
+$emer-light:  var(--wp--preset--color--emer-light);  // #4DA596
+
+$gold:        var(--wp--preset--color--gold);        // #C4A265
+$gold-light:  var(--wp--preset--color--gold-light);  // #D9BE96
+
+$cream:       var(--wp--preset--color--cream);       // #F5EDE0
+$cream-deep:  var(--wp--preset--color--cream-deep);  // #EDE0CC
+$parchment:   var(--wp--preset--color--parchment);   // #F9F4EC
+
+$ink:         var(--wp--preset--color--ink);         // #1A1209
+$ink-soft:    var(--wp--preset--color--ink-soft);    // #2E2016
+$text-body:   var(--wp--preset--color--text-body);   // #3D2E1E
+$text-muted:  var(--wp--preset--color--text-muted);  // #5E4A3A

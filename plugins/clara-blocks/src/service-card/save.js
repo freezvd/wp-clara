@@ -9,10 +9,10 @@ export default function save( { attributes } ) {
 
 	return (
 		<article { ...blockProps }>
+			<RichText.Content tagName="h4" value={ title } />
 			{ duration && (
 				<RichText.Content tagName="span" className="duration" value={ duration } />
 			) }
-			<RichText.Content tagName="h4" value={ title } />
 			{ description && (
 				<RichText.Content tagName="p" value={ description } />
 			) }

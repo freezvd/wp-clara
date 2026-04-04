@@ -1,8 +1,11 @@
-/* ─── INTRO STRIP ─────────────────────────────────────────────────────────── */
+@use './abstracts/variables/colors' as *;
+@use './abstracts/variables/typography' as *;
+@use './abstracts/utils/functions' as *;
+
 #intro-strip {
-  background: var(--emer);
-  padding: 2.8em 2.4em;
-  gap: 2.4em;
+  background: $emer;
+  padding: to_em(28) to_em(24);
+  gap: to_em(24);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   place-items: center;
@@ -17,41 +20,41 @@
   z-index: 1;
   display: flex;
   align-items: center;
-  gap: 1.4em;
+  gap: to_em(14);
 }
 
 .strip-icon {
-  width: 2.8rem;
-  height: 2.8rem;
-  color: var(--gold);
+  width: to_em(28);
+  height: to_em(28);
+  color: $gold;
   flex-shrink: 0;
 }
 
 .strip-text {
-  font-family: var(--sans);
-  font-size: 1.1rem;
+  font-family: $sans;
+  font-size: 1.2rem;
   font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--parchment);
+  color: $parchment;
 }
 
 .strip-divider {
   display: none;
   width: 1px;
-  height: 2.4rem;
+  height: to_em(24);
   background: rgba(196, 162, 101, 0.3);
 }
 
 /* ─── ABOUT ───────────────────────────────────────────────────────────────── */
 #about {
-  background: var(--parchment);
+  background-color: $parchment;
 }
 
 .about-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 4.8em;
+  gap: to_em(48);
   align-items: center;
 }
 
@@ -71,11 +74,11 @@
   background: linear-gradient(145deg, var(--emer) 0%, var(--burg) 100%);
   display: flex;
   align-items: flex-end;
-  padding: 3.2em;
+  padding: to_em(32);
 }
 
 .about-photo-placeholder p {
-  font-family: var(--serif);
+  font-family: $serif;
   font-style: italic;
   font-size: 1.8rem;
   color: rgba(245, 237, 224, 0.55);
@@ -97,7 +100,7 @@
   left: -2.4em;
   width: 8em;
   height: 8em;
-  background: var(--emer);
+  background-color: $emer;
   z-index: -1;
 }
 
@@ -107,7 +110,7 @@
   right: -2rem;
   width: 10rem;
   height: 10rem;
-  background: var(--burg);
+  background-color: $burg;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -117,20 +120,20 @@
 }
 
 .about-badge strong {
-  font-family: var(--serif);
+  font-family: $serif;
   font-size: 2.8rem;
   font-weight: 400;
-  color: var(--cream);
+  color: $cream;
   line-height: 1;
 }
 
 .about-badge span {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 0.8rem;
   font-weight: 400;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: var(--gold-light);
+  color: $gold-light;
   text-align: center;
   padding: 0 0.8em;
   margin-block-start: 0.4em;
@@ -142,19 +145,19 @@
 }
 
 .about-text h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.4rem, 4vw, 5.2rem);
   line-height: 1.1;
-  color: var(--ink-soft);
+  color: $ink-soft;
   margin-block-end: 2.8em;
 }
 
 .about-text p {
   font-size: 1.5rem;
   line-height: 1.85;
-  color: var(--text-body);
+  color: $text-body;
   margin-block-end: 2em;
 }
 
@@ -178,10 +181,10 @@
 }
 
 .about-signature p {
-  font-family: var(--serif);
+  font-family: $serif;
   font-style: italic;
   font-size: 1.7rem;
-  color: var(--burg-mid);
+  color: $burg-mid;
   margin: 0;
 }
 
@@ -198,7 +201,7 @@
   position: absolute;
   top: -6rem;
   left: 4rem;
-  font-family: var(--serif);
+  font-family: $serif;
   font-size: 40rem;
   line-height: 1;
   color: rgba(196, 162, 101, 0.06);
@@ -243,27 +246,27 @@
 .orn-diamond {
   width: 0.6em;
   height: 0.6em;
-  background: var(--gold);
+  background-color: $gold;
   transform: rotate(45deg);
 }
 
 .philosophy-quote {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(2.4rem, 3.5vw, 4rem);
   line-height: 1.45;
-  color: var(--cream);
+  color: $cream;
   margin-block-end: 4em;
 }
 
 .philosophy-quote em {
-  color: var(--gold-light);
+  color: $gold-light;
   font-style: normal;
 }
 
 .philosophy-attr {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 1rem;
   letter-spacing: 0.26em;
   text-transform: uppercase;
@@ -272,7 +275,7 @@
 
 /* ─── SERVICES SECTION (home) ─────────────────────────────────────────────── */
 #services {
-  background: var(--cream);
+  background-color: $cream;
 }
 
 .services-intro {
@@ -284,18 +287,18 @@
 }
 
 .services-intro h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.6rem, 5vw, 5.8rem);
   line-height: 1.1;
-  color: var(--ink-soft);
+  color: $ink-soft;
 }
 
 .services-intro p {
   font-size: 1.5rem;
   line-height: 1.85;
-  color: var(--text-muted);
+  color: $text-muted;
 }
 
 .service-category {
@@ -312,7 +315,7 @@
 }
 
 .category-num {
-  font-family: var(--serif);
+  font-family: $serif;
   font-size: 4.2rem;
   font-weight: 300;
   color: rgba(196, 162, 101, 0.35);
@@ -326,15 +329,15 @@
 }
 
 .category-info h3 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-size: clamp(2rem, 2.5vw, 2.8rem);
   font-weight: 400;
-  color: var(--ink-soft);
+  color: $ink-soft;
 }
 
 /* ─── RITUALS SECTION (home) ──────────────────────────────────────────────── */
 #rituals {
-  background: var(--ink);
+  background: $ink;
   padding: 8em 2.4em;
   position: relative;
   overflow: hidden;
@@ -361,7 +364,7 @@
 
 /* ─── CTA STRIP (home & shared) ───────────────────────────────────────────── */
 #cta-strip {
-  background: var(--burg);
+  background: $burg;
   padding: 6.4em 2.4em;
   position: relative;
   overflow: hidden;
@@ -407,11 +410,11 @@
 }
 
 .cta-text h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(2.8rem, 3.5vw, 4.4rem);
-  color: var(--cream);
+  color: $cream;
   line-height: 1.15;
 }
 
@@ -433,17 +436,17 @@
 }
 
 .cta-strip-text h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(2.8rem, 3.5vw, 4.4rem);
-  color: var(--cream);
+  color: $cream;
   line-height: 1.15;
   margin-block-end: 1.2em;
 }
 
 .cta-strip-text p {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 1.4rem;
   font-weight: 300;
   color: rgba(245, 237, 224, 0.65);
@@ -460,7 +463,7 @@
 
 /* ─── APPROACH SECTION (home) ─────────────────────────────────────────────── */
 #approach {
-  background: var(--parchment);
+  background-color: $parchment;
   padding: 8em 2.4em;
 }
 
@@ -493,7 +496,7 @@
 }
 
 .story-photo-placeholder p {
-  font-family: var(--serif);
+  font-family: $serif;
   font-style: italic;
   font-size: 1.8rem;
   color: rgba(245, 237, 224, 0.45);
@@ -514,7 +517,7 @@
   left: -2.4em;
   width: 8em;
   height: 8em;
-  background: var(--emer);
+  background-color: $emer;
   z-index: -1;
 }
 
@@ -524,7 +527,7 @@
   right: -2rem;
   width: 10rem;
   height: 10rem;
-  background: var(--burg);
+  background: $burg;
   border-radius: 50%;
   display: flex;
   flex-direction: column;
@@ -534,19 +537,19 @@
 }
 
 .story-badge strong {
-  font-family: var(--serif);
+  font-family: $serif;
   font-size: 2.8rem;
   font-weight: 400;
-  color: var(--cream);
+  color: $cream;
   line-height: 1;
 }
 
 .story-badge span {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 0.8rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold-light);
+  color: $gold-light;
   text-align: center;
   padding: 0 0.8em;
   margin-block-start: 0.4em;
@@ -558,11 +561,11 @@
 }
 
 .story-text h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.2rem, 4vw, 5rem);
-  color: var(--gold);
+  color: $gold;
   line-height: 1.1;
   margin-block-end: 30px;
 }
@@ -570,7 +573,7 @@
 .story-text p {
   font-size: 1.5rem;
   line-height: 1.85;
-  color: var(--gold-light);
+  color: $-gold-light;
   margin-block-end: 2em;
 }
 
@@ -594,7 +597,7 @@
 }
 
 .story-signature p {
-  font-family: var(--serif);
+  font-family: $serif;
   font-style: italic;
   font-size: 1.7rem;
   margin: 0;
@@ -602,7 +605,7 @@
 
 /* ─── PHILOSOPHY PILLARS (despre mine) ────────────────────────────────────── */
 #philosophy-pillars {
-  background: linear-gradient(135deg, var(--emer) 0%, #0F2420 100%);
+  background-image: linear-gradient(135deg, $emer 0%, #0F2420 100%);
   padding: 8em 2.4em;
   position: relative;
   overflow: hidden;
@@ -615,7 +618,7 @@
   right: 0;
   width: 40rem;
   height: 40rem;
-  background: radial-gradient(circle, rgba(107, 35, 55, 0.15) 0%, transparent 70%);
+  background-image: radial-gradient(circle, rgba(107, 35, 55, 0.15) 0%, transparent 70%);
 }
 
 .pillars-header {
@@ -629,11 +632,11 @@
 }
 
 .pillars-header h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.6rem, 5vw, 5.8rem);
-  color: var(--cream);
+  color: $cream;
   line-height: 1.1;
 }
 
@@ -654,7 +657,7 @@
 
 /* ─── TRAINING / TIMELINE (despre mine) ───────────────────────────────────── */
 #training {
-  background: var(--parchment);
+  background: $parchment;
   padding: 8em 2.4em;
 }
 
@@ -671,11 +674,11 @@
 }
 
 .training-intro h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.2rem, 4vw, 4.8rem);
-  color: var(--gold);
+  color: $gold;
   line-height: 1.1;
   margin-block-end: 2.4em;
 }
@@ -683,7 +686,7 @@
 .training-intro p {
   font-size: 1.5rem;
   line-height: 1.85;
-  color: var(--text-muted);
+  color: $text-muted;
 }
 
 .timeline {
@@ -714,13 +717,13 @@
   width: 1.2em;
   height: 1.2em;
   border-radius: 50%;
-  background: var(--gold);
+  background-color: $gold;
   flex-shrink: 0;
   margin-block-start: 0.6em;
 }
 
-.timeline-item:nth-child(odd) .timeline-dot { background: var(--burg); }
-.timeline-item:nth-child(3n) .timeline-dot { background: var(--emer-mid); }
+.timeline-item:nth-child(odd) .timeline-dot { background-color: $burg; }
+.timeline-item:nth-child(3n) .timeline-dot { background-color: $emer-mid; }
 
 .timeline-line {
   width: 1px;
@@ -734,20 +737,20 @@
 }
 
 .timeline-content h4 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-size: 2rem;
   font-weight: 400;
-  color: var(--ink-soft);
+  color: $ink-soft;
   margin-block-end: 0.4em;
 }
 
 .timeline-content .timeline-year {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: $gold;
   margin-block-end: 1em;
   display: block;
 }
@@ -755,12 +758,12 @@
 .timeline-content p {
   font-size: 1.4rem;
   line-height: 1.75;
-  color: var(--text-muted);
+  color: $text-muted;
 }
 
 /* ─── VALUES SECTION (despre mine) ───────────────────────────────────────── */
 #values {
-  background: var(--cream);
+  background: $cream;
   padding: 8em 2.4em;
 }
 
@@ -775,11 +778,11 @@
 }
 
 .values-header h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.6rem, 5vw, 5.8rem);
-  color: var(--ink-soft);
+  color: $ink-soft;
   line-height: 1.1;
 }
 
@@ -799,27 +802,27 @@
 }
 
 .rituals-intro-grid h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.6rem, 5vw, 5.8rem);
-  color: var(--ink-soft);
+  color: $ink-soft;
   line-height: 1.1;
 }
 
 .rituals-intro-grid h2 em {
   font-style: normal;
-  color: var(--burg);
+  color: $burg;
 }
 
 .rituals-intro-grid p {
   font-size: 1.5rem;
   line-height: 1.85;
-  color: var(--text-muted);
+  color: $text-muted;
 }
 
 #ritual-cards {
-  background: var(--ink);
+  background-color: $ink;
   padding: 8em 2.4em;
   position: relative;
   overflow: hidden;
@@ -829,7 +832,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background:
+  background-image:
     radial-gradient(ellipse 60% 50% at 0% 50%, rgba(42, 110, 96, 0.25) 0%, transparent 55%),
     radial-gradient(ellipse 50% 40% at 100% 50%, rgba(107, 35, 55, 0.25) 0%, transparent 55%);
   pointer-events: none;
@@ -844,7 +847,7 @@
 
 /* ─── PROCESS STEPS (ritualuri page) ──────────────────────────────────────── */
 #process {
-  background: var(--cream);
+  background-color: $cream;
   padding: 8em 2.4em;
 }
 
@@ -859,11 +862,11 @@
 }
 
 .process-header h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.6rem, 5vw, 5.8rem);
-  color: var(--ink-soft);
+  color: $ink-soft;
   line-height: 1.1;
 }
 
@@ -875,7 +878,7 @@
 
 .process-step {
   padding: 4.8em 3.6em;
-  background: var(--parchment);
+  background-color: $parchment;
   position: relative;
 }
 
@@ -886,7 +889,7 @@
   right: 0;
   width: 1px;
   height: 4em;
-  background: rgba(196, 162, 101, 0.2);
+  background-color: rgba(196, 162, 101, 0.2);
   transform: translateY(-50%);
 }
 
@@ -895,7 +898,7 @@
 }
 
 .step-num {
-  font-family: var(--serif);
+  font-family: $serif;
   font-size: 5.6rem;
   font-weight: 300;
   color: rgba(196, 162, 101, 0.18);
@@ -905,22 +908,22 @@
 }
 
 .process-step h3 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-size: 2rem;
   font-weight: 400;
-  color: var(--ink-soft);
+  color: $ink-soft;
   margin-block-end: 1.2em;
 }
 
 .process-step p {
   font-size: 1.4rem;
   line-height: 1.8;
-  color: var(--text-muted);
+  color: $text-muted;
 }
 
 /* ─── RITUAL QUOTE (ritualuri page) ──────────────────────────────────────── */
 #ritual-quote {
-  background: linear-gradient(135deg, var(--emer) 0%, #0F2420 100%);
+  background-image: linear-gradient(135deg, var(--emer) 0%, #0F2420 100%);
   padding: 8em 2.4em;
   position: relative;
   overflow: hidden;
@@ -932,7 +935,7 @@
   position: absolute;
   top: -6rem;
   left: 4rem;
-  font-family: var(--serif);
+  font-family: $serif;
   font-size: 40rem;
   line-height: 1;
   color: rgba(196, 162, 101, 0.05);
@@ -956,17 +959,17 @@
 }
 
 .quote-text {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(2.4rem, 3.5vw, 4rem);
   line-height: 1.45;
-  color: var(--cream);
+  color: $cream;
   margin-block-end: 4em;
 }
 
 .quote-attr {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 1rem;
   letter-spacing: 0.26em;
   text-transform: uppercase;
@@ -975,7 +978,7 @@
 
 /* ─── TARIFE / TERAPII PAGE INTRO STRIPS ─────────────────────────────────── */
 #tarife-intro {
-  background: var(--emer);
+  background-colo: $emer;
   padding: 6em 2.4em;
   position: relative;
   overflow: hidden;
@@ -993,7 +996,7 @@
 }
 
 .tarife-intro-inner p {
-  font-family: var(--serif);
+  font-family: $serif;
   font-style: italic;
   font-size: clamp(2rem, 2.5vw, 2.8rem);
   color: rgba(245, 237, 224, 0.8);
@@ -1002,7 +1005,7 @@
 }
 
 .tarife-intro-inner .note {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 1.3rem;
   font-weight: 300;
   color: rgba(245, 237, 224, 0.55);
@@ -1016,7 +1019,7 @@
 }
 
 #terapii-intro {
-  background: var(--emer);
+  background: $emer;
   padding: 5em 2.4em;
   position: relative;
   overflow: hidden;
@@ -1034,7 +1037,7 @@
 }
 
 .terapii-intro-inner p {
-  font-family: var(--serif);
+  font-family: $serif;
   font-style: italic;
   font-size: clamp(2rem, 2.5vw, 2.8rem);
   color: rgba(245, 237, 224, 0.8);
@@ -1043,7 +1046,7 @@
 }
 
 .terapii-intro-inner .note {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 1.4rem;
   font-weight: 300;
   color: rgba(245, 237, 224, 0.55);
@@ -1058,12 +1061,12 @@
 
 /* ─── TERAPII CATEGORY SECTIONS ───────────────────────────────────────────── */
 #zonale {
-  background: var(--parchment);
+  background-color: $parchment;
   padding: 8em 2.4em;
 }
 
 #specializate {
-  background: linear-gradient(160deg, #130E0B 0%, #0E1C1A 100%);
+  background-image: linear-gradient(160deg, #130E0B 0%, #0E1C1A 100%);
   padding: 8em 2.4em;
   position: relative;
   overflow: hidden;
@@ -1073,14 +1076,14 @@
   content: '';
   position: absolute;
   inset: 0;
-  background:
+  background-image:
     radial-gradient(ellipse 50% 45% at 5% 15%, rgba(107, 35, 55, 0.18) 0%, transparent 55%),
     radial-gradient(ellipse 45% 50% at 95% 85%, rgba(42, 110, 96, 0.15) 0%, transparent 55%);
   pointer-events: none;
 }
 
 #protocoale {
-  background: var(--cream);
+  background: $cream;
   padding: 8em 2.4em;
 }
 
@@ -1102,12 +1105,12 @@
 }
 
 .cat-header-left h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.6rem, 5vw, 6rem);
   line-height: 1.15;
-  color: var(--gold);
+  color: $gold;
 }
 
 .cat-header-left p {
@@ -1119,7 +1122,7 @@
 
 #zonale .cat-header-left p,
 #protocoale .cat-header-left p {
-  color: var(--text-muted);
+  color: $text-muted;
 }
 
 #specializate .cat-header-left p {
@@ -1127,7 +1130,7 @@
 }
 
 .cat-badge {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.22em;
@@ -1137,10 +1140,10 @@
   flex-shrink: 0;
 }
 
-#zonale .cat-badge { color: var(--emer); border-color: rgba(42, 110, 96, 0.3); }
-#protocoale .cat-badge { color: var(--burg); border-color: rgba(107, 35, 55, 0.3); }
-#specializate .cat-badge { color: var(--gold-light); border-color: rgba(196, 162, 101, 0.3); }
-#specializate .eyebrow { color: var(--gold); }
+#zonale .cat-badge { color: $emer; border-color: rgba(42, 110, 96, 0.3); }
+#protocoale .cat-badge { color: $burg; border-color: rgba(107, 35, 55, 0.3); }
+#specializate .cat-badge { color: $gold-light; border-color: rgba(196, 162, 101, 0.3); }
+#specializate .eyebrow { color: $gold; }
 
 .cat-divider {
   border: none;
@@ -1154,7 +1157,7 @@
 
 /* ─── SINGLE THERAPY PAGE SECTIONS ───────────────────────────────────────── */
 #intro {
-  background: var(--parchment);
+  background-color: $parchment;
 }
 
 .intro-grid {
@@ -1170,11 +1173,11 @@
 }
 
 .intro-text h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.2rem, 4vw, 5.2rem);
-  color: var(--gold);
+  color: $gold;
   line-height: 1.1;
   margin-block-end: 2.8em;
 }
@@ -1182,7 +1185,7 @@
 .intro-text p {
   font-size: 1.55rem;
   line-height: 1.9;
-  color: var(--text-body);
+  color: $text-body;
   margin-block-end: 2.2em;
 }
 
@@ -1191,13 +1194,13 @@
 }
 
 .intro-text p em {
-  font-family: var(--serif);
+  font-family: $serif;
   font-style: italic;
-  color: var(--burg);
+  color: $burg;
 }
 
 .infobar {
-  background: var(--ink);
+  background-color: $ink;
   padding: 3.6em;
   display: flex;
   flex-direction: column;
@@ -1216,33 +1219,33 @@
 .infobar-item:last-child { border-bottom: none; padding-block-end: 0; }
 
 .infobar-label {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 0.9rem;
   font-weight: 500;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: $gold;
   display: block;
   margin-block-end: 0.7em;
 }
 
 .infobar-value {
-  font-family: var(--serif);
+  font-family: $serif;
   font-size: 2.2rem;
   font-weight: 300;
-  color: var(--cream);
+  color: $cream;
   line-height: 1.2;
 }
 
 .infobar-value strong {
   font-weight: 400;
-  color: var(--gold-light);
+  color: $gold-light;
 }
 
 .infobar-cta {
   margin-block-start: 3.2em;
   display: block;
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 1.1rem;
   font-weight: 500;
   letter-spacing: 0.2em;
@@ -1255,12 +1258,12 @@
 }
 
 .infobar-cta:hover {
-  background: var(--gold-light);
+  background-color: $gold-light;
 }
 
 /* Benefits section */
 #beneficii {
-  background: var(--cream);
+  background-color: $cream;
 }
 
 .benefits-header {
@@ -1274,18 +1277,18 @@
 }
 
 .benefits-header h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.6rem, 5vw, 5.8rem);
-  color: var(--ink-soft);
+  color: $ink-soft;
   line-height: 1.1;
 }
 
 .benefits-header p {
   margin-block-start: 2em;
   font-size: 1.5rem;
-  color: var(--text-muted);
+  color: $text-muted;
   max-width: 52rem;
   margin-inline: auto;
   line-height: 1.8;
@@ -1298,15 +1301,15 @@
 }
 
 .benefit-card {
-  background: var(--parchment);
+  background: $parchment;
   padding: 4.8em 3.6em;
   border-left: 2px solid transparent;
   transition: border-color 0.35s, background 0.35s, transform 0.35s;
 }
 
 .benefit-card:hover {
-  border-left-color: var(--burg);
-  background: white;
+  border-left-color: $burg;
+  background-color: $white;
   transform: translateX(0.4em);
 }
 
@@ -1314,15 +1317,15 @@
   width: 5.2rem;
   height: 5.2rem;
   margin-block-end: 2.8em;
-  color: var(--burg);
+  color: $burg;
   opacity: 0.75;
 }
 
 .benefit-card h3 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 400;
   font-size: 2.2rem;
-  color: var(--ink-soft);
+  color: $ink-soft;
   margin-block-end: 1.2em;
   line-height: 1.2;
 }
@@ -1330,12 +1333,12 @@
 .benefit-card p {
   font-size: 1.4rem;
   line-height: 1.8;
-  color: var(--text-muted);
+  color: $text-muted;
 }
 
 /* Session / steps section */
 #sedinta {
-  background: linear-gradient(155deg, #120D0A 0%, #1A1209 55%, #0D1E1B 100%);
+  background-image: linear-gradient(155deg, #120D0A 0%, #1A1209 55%, #0D1E1B 100%);
   position: relative;
   overflow: hidden;
 }
@@ -1344,7 +1347,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  background:
+  background-image:
     radial-gradient(ellipse 50% 40% at 5% 20%, rgba(107, 35, 55, 0.18) 0%, transparent 55%),
     radial-gradient(ellipse 45% 50% at 95% 85%, rgba(42, 110, 96, 0.14) 0%, transparent 55%);
   pointer-events: none;
@@ -1365,11 +1368,11 @@
 }
 
 .sedinta-header h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.6rem, 5vw, 5.8rem);
-  color: var(--cream);
+  color: $cream;
   line-height: 1.1;
   max-width: 72rem;
 }
@@ -1403,7 +1406,7 @@
 
 /* Use .step-num (not to conflict with .process-step .step-num) */
 .step > .step-num {
-  font-family: var(--serif);
+  font-family: $serif;
   font-size: 4.8rem;
   font-weight: 300;
   color: rgba(196, 162, 101, 0.18);
@@ -1413,10 +1416,10 @@
 }
 
 .step-content h3 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 400;
   font-size: 2.4rem;
-  color: var(--cream);
+  color: $cream;
   margin-block-end: 1.2em;
 }
 
@@ -1427,19 +1430,19 @@
 }
 
 .step-content p em {
-  font-family: var(--serif);
+  font-family: $serif;
   font-style: italic;
-  color: var(--gold-light);
+  color: $gold-light;
 }
 
 .step-tag {
   display: inline-block;
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 0.85rem;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: $gold;
   border: 1px solid rgba(196, 162, 101, 0.25);
   padding: 0.6em 1.6em;
   margin-block-end: 1.6em;
@@ -1447,7 +1450,7 @@
 
 /* Pentru cine (who it's for) */
 #pentru-cine {
-  background: var(--parchment);
+  background-color: $parchment;
 }
 
 .pentru-header {
@@ -1460,11 +1463,11 @@
 }
 
 .pentru-header h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.2rem, 4.5vw, 5.2rem);
-  color: var(--ink-soft);
+  color: $ink-soft;
   line-height: 1.1;
 }
 
@@ -1479,11 +1482,11 @@
   border-top: 2px solid transparent;
 }
 
-.pentru-col.ideal { background: white; border-top-color: var(--emer-mid); }
-.pentru-col.contra { background: var(--cream); border-top-color: rgba(107, 35, 55, 0.35); }
+.pentru-col.ideal { background-color: $white; border-top-color: $emer-mid; }
+.pentru-col.contra { background-color: $cream; border-top-color: rgba(107, 35, 55, 0.35); }
 
 .pentru-col-title {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 1.1rem;
   font-weight: 600;
   letter-spacing: 0.22em;
@@ -1493,8 +1496,8 @@
   border-bottom: 1px solid rgba(196, 162, 101, 0.2);
 }
 
-.ideal .pentru-col-title { color: var(--emer); }
-.contra .pentru-col-title { color: var(--burg); }
+.ideal .pentru-col-title { color: $emer; }
+.contra .pentru-col-title { color: $burg; }
 
 .pentru-list {
   list-style: none;
@@ -1511,7 +1514,7 @@
   border-bottom: 1px solid rgba(196, 162, 101, 0.1);
   font-size: 1.45rem;
   line-height: 1.7;
-  color: var(--text-body);
+  color: $text-body;
 }
 
 .pentru-list li:last-child {
@@ -1530,12 +1533,12 @@
   margin-block-start: 0.2em;
 }
 
-.ideal .mark { background: rgba(42, 110, 96, 0.12); color: var(--emer); }
-.contra .mark { background: rgba(107, 35, 55, 0.1); color: var(--burg); }
+.ideal .mark { background: rgba(42, 110, 96, 0.12); color: $emer; }
+.contra .mark { background: rgba(107, 35, 55, 0.1); color: $burg; }
 
 /* Tarife (pricing) section inside single therapy */
 #tarife {
-  background: var(--ink);
+  background: $ink;
 }
 
 .tarife-header {
@@ -1549,11 +1552,11 @@
 }
 
 .tarife-header h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3.2rem, 4.5vw, 5.2rem);
-  color: var(--cream);
+  color: $cream;
   line-height: 1.1;
 }
 
@@ -1568,7 +1571,7 @@
 
 /* Related therapies header */
 #related {
-  background: var(--cream);
+  background: $cream;
 }
 
 .related-header {
@@ -1581,17 +1584,17 @@
 }
 
 .related-header h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3rem, 4vw, 4.8rem);
-  color: var(--ink-soft);
+  color: $ink-soft;
   line-height: 1.1;
 }
 
 /* Bottom CTA (single therapy page) */
 #bottom-cta {
-  background: var(--burg);
+  background: $burg;
   padding: 7em 2.4em;
   position: relative;
   overflow: hidden;
@@ -1605,7 +1608,7 @@
   width: 44rem;
   height: 44rem;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.04);
+  background-color: rgba(255, 255, 255, 0.04);
   pointer-events: none;
 }
 
@@ -1617,7 +1620,7 @@
   width: 36rem;
   height: 36rem;
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.08);
+  background-color: rgba(0, 0, 0, 0.08);
   pointer-events: none;
 }
 
@@ -1639,11 +1642,11 @@
 }
 
 .bottom-cta-text h2 {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   font-size: clamp(3rem, 4vw, 5.2rem);
-  color: var(--cream);
+  color: $cream;
   line-height: 1.1;
 }
 

@@ -168,32 +168,32 @@
 				{
 					"slug": "body",
 					"name": "Body",
-					"size": "1.5rem"
+					"size": "1.6rem"
 				},
 				{
 					"slug": "md-lg",
 					"name": "Medium Large",
-					"size": "1.6rem"
+					"size": "1.7rem"
 				},
 				{
 					"slug": "lg-sm",
 					"name": "Large Small",
-					"size": "1.7rem"
+					"size": "1.8rem"
 				},
 				{
 					"slug": "lg",
 					"name": "Large",
-					"size": "1.8rem"
+					"size": "1.9rem"
 				},
 				{
 					"slug": "xl-xs",
 					"name": "XL XS",
-					"size": "1.9rem"
+					"size": "2rem"
 				},
 				{
 					"slug": "xl-sm",
 					"name": "XL Small",
-					"size": "2rem"
+					"size": "2.1rem"
 				},
 				{
 					"slug": "xl",

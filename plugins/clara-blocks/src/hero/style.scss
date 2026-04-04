@@ -1,5 +1,25 @@
 // ─── Hero block styles (frontend + editor) ────────────────────────────────────
 
+// ─── Editor overrides — reset animations so fields are visible while editing ──
+.editor-styles-wrapper .wp-block-clara-blocks-hero {
+  background-color: var(--ink, #1a1209);
+  min-block-size: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.editor-styles-wrapper {
+  .hero-eyebrow,
+  .hero-title,
+  .hero-tagline,
+  .hero-actions,
+  .hero-scroll {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
 .hero-inner {
   position: relative;
   z-index: 1;

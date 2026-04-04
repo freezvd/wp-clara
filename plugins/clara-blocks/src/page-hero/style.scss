@@ -1,5 +1,17 @@
 // ─── Page Hero block styles (frontend + editor) ──────────────────────────────
 
+// ─── Editor overrides — reset animations so fields are visible while editing ──
+.editor-styles-wrapper {
+  .page-hero-inner .eyebrow,
+  .page-hero-inner h1,
+  .page-hero-inner p,
+  .post-deck,
+  .hero-badge {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+}
+
 .page-hero {
   display: flex;
   align-items: center;

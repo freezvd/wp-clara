@@ -1,5 +1,12 @@
-import { useBlockProps, RichText, InspectorControls } from '@wordpress/block-editor';
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { useBlockProps, RichText, BlockControls } from '@wordpress/block-editor';
+import { ToolbarDropdownMenu } from '@wordpress/components';
+import { brush } from '@wordpress/icons';
+
+const COLOR_CONTROLS = [
+	{ title: 'Default (burgundy)', value: 'default' },
+	{ title: 'Emerald',            value: 'emerald' },
+	{ title: 'Gold',               value: 'gold' },
+];
 
 export default function Edit( { attributes, setAttributes } ) {
 	const { duration, title, description, colorVariant } = attributes;
@@ -10,22 +17,26 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	return (
 		<>
-			<InspectorControls>
-				<PanelBody title="Card style">
-					<SelectControl
-						label="Color variant"
-						value={ colorVariant }
-						options={ [
-							{ label: 'Default (burgundy)', value: 'default' },
-							{ label: 'Emerald',            value: 'emerald' },
-							{ label: 'Gold',               value: 'gold' },
-						] }
-						onChange={ ( v ) => setAttributes( { colorVariant: v } ) }
-					/>
-				</PanelBody>
-			</InspectorControls>
+			<BlockControls>
+				<ToolbarDropdownMenu
+					icon={ brush }
+					label="Color variant"
+					controls={ COLOR_CONTROLS.map( ( { title: label, value } ) => ( {
+						title: label,
+						isActive: colorVariant === value,
+						onClick: () => setAttributes( { colorVariant: value } ),
+					} ) ) }
+				/>
+			</BlockControls>
 
 			<article { ...blockProps }>
+				<RichText
+					tagName="h4"
+					placeholder="Service name…"
+					value={ title }
+					onChange={ ( v ) => setAttributes( { title: v } ) }
+					allowedFormats={ [ 'core/italic' ] }
+				/>
 				<RichText
 					tagName="span"
 					className="duration"
@@ -33,13 +44,6 @@ export default function Edit( { attributes, setAttributes } ) {
 					value={ duration }
 					onChange={ ( v ) => setAttributes( { duration: v } ) }
 					allowedFormats={ [] }
-				/>
-				<RichText
-					tagName="h4"
-					placeholder="Service name…"
-					value={ title }
-					onChange={ ( v ) => setAttributes( { title: v } ) }
-					allowedFormats={ [ 'core/italic' ] }
 				/>
 				<RichText
 					tagName="p"

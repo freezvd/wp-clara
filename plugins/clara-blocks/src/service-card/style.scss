@@ -24,22 +24,23 @@
 
 .service-card h4 {
   font-family: var(--serif);
-  font-size: 1.9rem;
-  font-weight: 400;
+  font-size: clamp(2rem, 2.2vw, 2.6rem);
+  font-weight: 300;
+  font-style: italic;
   color: var(--ink-soft);
-  margin-block-end: 0.8em;
-  line-height: 1.3;
+  margin-block-end: 1.6em;
+  line-height: 1.15;
 }
 
 .service-card .duration {
   display: block;
   font-family: var(--sans);
-  font-size: 1rem;
+  font-size: 0.95rem;
   font-weight: 500;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-block-end: 1.2em;
+  margin-block-end: 1.8em;
 }
 
 .service-card p {
@@ -50,7 +51,6 @@
 
 @container services-grid (min-width: 500px) {
   .service-card { padding: 3.6em 3.2em; }
-  .service-card h4 { font-size: 2rem; }
 }
 
 @container services-grid (min-width: 800px) {

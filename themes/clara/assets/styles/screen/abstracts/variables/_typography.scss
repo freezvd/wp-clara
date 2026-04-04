@@ -1,7 +1,7 @@
 // ─── CLARA TYPOGRAPHY VARS ───────────────────────────────────────────────────
 
-$serif: var(--serif);   // 'Cormorant Garamond', Georgia, serif
-$sans:  var(--sans);    // 'Raleway', 'Helvetica Neue', sans-serif
+$serif: var(--wp--preset--font-family--serif);   // 'Cormorant Garamond', Georgia, serif
+$sans:  var(--wp--preset--font-family--sans);    // 'Raleway', 'Helvetica Neue', sans-serif
 
 // USAGE
 // .heading { font-family: $serif; }

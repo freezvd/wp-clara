@@ -1,19 +1,19 @@
-/* ─── TYPOGRAPHY SCALE ───────────────────────────────────────────────────── */
+@use './abstracts/variables/typography' as *;
 .display {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 300;
   font-style: italic;
   line-height: 1.08;
 }
 
 .heading {
-  font-family: var(--serif);
+  font-family: $serif;
   font-weight: 400;
   line-height: 1.2;
 }
 
 .eyebrow {
-  font-family: var(--sans);
+  font-family: $sans;
   font-size: 1rem;
   font-weight: 500;
   letter-spacing: 0.28em;

@@ -2,6 +2,7 @@ import { useBlockProps, RichText, InspectorControls, useInnerBlocksProps } from 
 import { PanelBody, TextControl } from '@wordpress/components';
 
 const ALLOWED_BLOCKS = [ 'core/buttons', 'core/button' ];
+const TEMPLATE = [ [ 'core/buttons', {}, [ [ 'core/button', {} ] ] ] ];
 
 export default function Edit( { attributes, setAttributes } ) {
 	const { eyebrow, heading, headingStrong, tagline, scrollLabel } = attributes;
@@ -9,7 +10,7 @@ export default function Edit( { attributes, setAttributes } ) {
 	const blockProps = useBlockProps();
 	const innerBlocksProps = useInnerBlocksProps(
 		{ className: 'hero-actions' },
-		{ allowedBlocks: ALLOWED_BLOCKS }
+		{ allowedBlocks: ALLOWED_BLOCKS, template: TEMPLATE }
 	);
 
 	return (

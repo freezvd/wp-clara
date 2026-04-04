@@ -1,0 +1,22 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "clara-blocks/service-card",
+	"version": "1.0.0",
+	"title": "Service Card",
+	"category": "clara-blocks",
+	"description": "A single service card with duration label, title, and description. Use inside a Services Grid.",
+	"keywords": [ "service", "card", "therapy" ],
+	"textdomain": "clara-blocks",
+	"attributes": {
+		"duration":     { "type": "string",  "default": "" },
+		"title":        { "type": "string",  "default": "" },
+		"description":  { "type": "string",  "default": "" },
+		"colorVariant": { "type": "string",  "default": "default" }
+	},
+	"supports": {
+		"html": false
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}

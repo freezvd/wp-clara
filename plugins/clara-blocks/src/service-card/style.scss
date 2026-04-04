@@ -1,0 +1,58 @@
+// ─── Service Card block styles (frontend + editor) ────────────────────────────
+
+.service-card {
+  background-color: var(--parchment);
+  padding: 3.2em;
+  border-inline-start: 2px solid transparent;
+  transition: border-color 0.35s, background-color 0.35s, transform 0.35s;
+  cursor: default;
+}
+
+.service-card:hover {
+  border-inline-start-color: var(--burg);
+  background-color: var(--wp--preset--color--white);
+  transform: translateX(0.4em);
+}
+
+.service-card.emerald:hover {
+  border-inline-start-color: var(--emer-mid);
+}
+
+.service-card.gold:hover {
+  border-inline-start-color: var(--gold);
+}
+
+.service-card h4 {
+  font-family: var(--serif);
+  font-size: 1.9rem;
+  font-weight: 400;
+  color: var(--ink-soft);
+  margin-block-end: 0.8em;
+  line-height: 1.3;
+}
+
+.service-card .duration {
+  display: block;
+  font-family: var(--sans);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-block-end: 1.2em;
+}
+
+.service-card p {
+  font-size: 1.35rem;
+  line-height: 1.75;
+  color: var(--text-muted);
+}
+
+@container services-grid (min-width: 500px) {
+  .service-card { padding: 3.6em 3.2em; }
+  .service-card h4 { font-size: 2rem; }
+}
+
+@container services-grid (min-width: 800px) {
+  .service-card { padding: 4em 3.6em; }
+}

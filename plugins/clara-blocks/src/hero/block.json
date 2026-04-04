@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "clara-blocks/hero",
+	"version": "1.0.0",
+	"title": "Hero",
+	"category": "clara-blocks",
+	"description": "Full-screen home hero with eyebrow, two-part heading, tagline, CTA buttons, and scroll indicator.",
+	"keywords": [ "hero", "home", "heading", "cta" ],
+	"textdomain": "clara-blocks",
+	"attributes": {
+		"eyebrow":       { "type": "string", "default": "" },
+		"heading":       { "type": "string", "default": "" },
+		"headingStrong": { "type": "string", "default": "" },
+		"tagline":       { "type": "string", "default": "" },
+		"scrollLabel":   { "type": "string", "default": "Scroll" }
+	},
+	"supports": {
+		"align": [ "full" ],
+		"html": false
+	},
+	"editorScript": "file:./index.js",
+	"style": "file:./style-index.css"
+}
